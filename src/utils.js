@@ -150,13 +150,11 @@ const contextDict = globalContext.keys().reduce((memo, key) => {
   const subModuleName = availableSubModules.find(subModule => key.includes(subModule))
   const currentName = key.replace(subModuleName, '')
   const currentSubmodule = memo[subModuleName] || {}
-  return {
-    ...memo,
-    [subModuleName]: {
-      ...currentSubmodule,
+  return Object.assign({}, memo, {
+    [subModuleName]: Object.assign({}, currentSubmodule, {
       [currentName]: globalContext(key),
-    }
-  }
+    })
+  })
 }, {})
 exports.moduleMap = function(dir) {
   return contextDict[dir]
