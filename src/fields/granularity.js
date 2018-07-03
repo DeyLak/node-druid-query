@@ -1,8 +1,9 @@
 'use strict'
 
 var FieldError = require('../errors').FieldError
-  , utils = require('../utils')
-  , formatters = utils.moduleMap('/granularities')
+const utils = require('../utils')
+
+const formatters = utils.moduleMap('/granularities')
 
 var GRANULARITIES = ['all', 'none', 'minute', 'fifteen_minute', 'thirty_minute', 'hour', 'day',
                      'week', 'month', 'quarter', 'year']

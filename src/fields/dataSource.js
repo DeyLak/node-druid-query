@@ -1,8 +1,9 @@
 'use strict'
 
 var FieldError = require('../errors').FieldError
-  , utils = require('./../utils')
-  , ds = utils.moduleMap('/dataSources')
+const utils = require('./../utils')
+
+const ds = utils.moduleMap('/dataSources')
 
 module.exports = dataSource
 

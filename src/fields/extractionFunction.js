@@ -1,8 +1,9 @@
 'use strict'
 
 var FieldError = require('../errors').FieldError
-  , utils = require('./../utils')
-  , fns = utils.moduleMap('/extraction-functions')
+const utils = require('./../utils')
+
+const fns = utils.moduleMap('/extraction-functions')
 
 module.exports = extractionFunction
 

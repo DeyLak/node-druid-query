@@ -8,8 +8,6 @@ var errors = require('./errors')
   , MissingFieldError = errors.MissingFieldError
 
 
-
-
 /**
  * Load fields setters
  *

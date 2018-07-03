@@ -1,10 +1,9 @@
 'use strict'
 
 var FieldError = require('../errors').FieldError
-  , utils = require('./../utils')
-  , aggregations = utils.moduleMap('/aggregations')
+const utils = require('./../utils')
 
-
+const aggregations = utils.moduleMap('/aggregations')
 
 
 /**

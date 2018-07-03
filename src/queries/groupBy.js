@@ -14,7 +14,6 @@ module.exports = GroupByQuery
 
 
 
-
 /**
  * GroupBy query
  *

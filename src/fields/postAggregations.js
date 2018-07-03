@@ -1,8 +1,9 @@
 'use strict'
 
-var FieldError = require('../errors').FieldError
-  , utils = require('./../utils')
-  , postAggregations = utils.moduleMap('/postAggregations')
+const FieldError = require('../errors').FieldError
+const utils = require('./../utils')
+
+const postAggregations = utils.moduleMap('/postAggregations')
 
 
 

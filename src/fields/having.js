@@ -1,8 +1,9 @@
 'use strict'
 
 var FieldError = require('../errors').FieldError
-  , utils = require('./../utils')
-  , specs = utils.moduleMap('/having')
+const utils = require('./../utils')
+
+const specs = utils.moduleMap('/having')
 
 module.exports = having
 
