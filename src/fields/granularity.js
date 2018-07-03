@@ -2,7 +2,7 @@
 
 var FieldError = require('../errors').FieldError
   , utils = require('../utils')
-  , formatters = utils.moduleMap(__dirname + '/granularities')
+  , formatters = utils.moduleMap('/granularities')
 
 var GRANULARITIES = ['all', 'none', 'minute', 'fifteen_minute', 'thirty_minute', 'hour', 'day',
                      'week', 'month', 'quarter', 'year']

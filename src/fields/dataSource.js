@@ -2,7 +2,7 @@
 
 var FieldError = require('../errors').FieldError
   , utils = require('./../utils')
-  , ds = utils.moduleMap(__dirname + '/dataSources')
+  , ds = utils.moduleMap('/dataSources')
 
 module.exports = dataSource
 

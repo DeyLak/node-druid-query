@@ -2,7 +2,7 @@
 
 var FieldError = require('../errors').FieldError
   , utils = require('./../utils')
-  , aggregations = utils.moduleMap(__dirname + '/aggregations')
+  , aggregations = utils.moduleMap('/aggregations')
 
 
 

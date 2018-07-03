@@ -2,7 +2,7 @@
 
 var FieldError = require('../errors').FieldError
   , utils = require('./../utils')
-  , metrics = utils.moduleMap(__dirname + '/metrics')
+  , metrics = utils.moduleMap('/metrics')
 
 module.exports = metric
 

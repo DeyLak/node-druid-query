@@ -2,7 +2,7 @@
 
 var FieldError = require('../errors').FieldError
   , utils = require('./../utils')
-  , specs = utils.moduleMap(__dirname + '/having')
+  , specs = utils.moduleMap('/having')
 
 module.exports = having
 

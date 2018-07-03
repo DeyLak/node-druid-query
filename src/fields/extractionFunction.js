@@ -2,7 +2,7 @@
 
 var FieldError = require('../errors').FieldError
   , utils = require('./../utils')
-  , fns = utils.moduleMap(__dirname + '/extraction-functions')
+  , fns = utils.moduleMap('/extraction-functions')
 
 module.exports = extractionFunction
 
@@ -23,7 +23,7 @@ function extractionFunction(type) {
     return type
   }
   else if (!fns.hasOwnProperty(type)) {
-    throw new FieldError('Unknown DimExtractionFn type: ' + type) 
+    throw new FieldError('Unknown DimExtractionFn type: ' + type)
   }
 
   var args = utils.args(arguments, 1)

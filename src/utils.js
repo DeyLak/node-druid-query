@@ -132,17 +132,32 @@ exports.isObject = function(value) {
  * @param {string} dir
  * @returns {Object}
  */
-exports.moduleMap = function(dir) {
-  var map = {}
-  const context = require.context(dir, true, /.*/)
-  context.keys().forEach(function(filename) {
-    if (filename === 'index.js') {
-      return
+const globalContext = require.context('./fields', true, /.*/)
+const availableSubModules = [
+  '/aggregations',
+  '/dataSources',
+  '/extraction-functions',
+  '/filters',
+  '/granularities',
+  '/having',
+  '/metrics',
+  '/postAggregations',
+]
+const contextDict = globalContext.keys().reduce((memo, key) => {
+  if (key.includes('index.js')) {
+    return memo
+  }
+  const subModuleName = availableSubModules.find(subModule => key.includes(subModule))
+  const currentName = key.replace(subModuleName, '')
+  const currentSubmodule = memo[subModuleName] || {}
+  return {
+    ...memo,
+    [subModuleName]: {
+      ...currentSubmodule,
+      [currentName]: globalContext(key),
     }
-
-    var modulePath = path.basename(filename, '.js')
-    map[filename] = context(filename)
-  })
-
-  return map
+  }
+}, {})
+exports.moduleMap = function(dir) {
+  return contextDict[dir]
 }
