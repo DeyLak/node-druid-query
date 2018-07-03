@@ -1,8 +1,6 @@
 'use strict'
 
 var errors = require('./errors')
-  , fs = require('fs')
-  , path = require('path')
   , FieldError = errors.FieldError
   , FieldTypeError = errors.FieldTypeError
   , slice = Array.prototype.slice
@@ -136,15 +134,15 @@ exports.isObject = function(value) {
  */
 exports.moduleMap = function(dir) {
   var map = {}
-  fs.readdirSync(dir).forEach(mapFn)
-  function mapFn(filename) {
+  const context = require.context(dir, true, /.*/)
+  context.keys().forEach(function(filename) {
     if (filename === 'index.js') {
       return
     }
 
     var modulePath = path.basename(filename, '.js')
-    map[modulePath] = require(path.join(dir, filename))
-  }
+    map[filename] = context(filename)
+  })
 
   return map
 }
