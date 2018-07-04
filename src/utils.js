@@ -62,7 +62,7 @@ var FIELD_SETTERS = {
       value = args(arguments, 0)
     }
 
-    return value
+    return value.filter(item => item)
   }
 }
 
