@@ -43,7 +43,7 @@ var FIELD_SETTERS = {
     }
 
     if (isNaN(num)) {
-      return FieldTypeError(this + '', 'number', value)
+      return new FieldTypeError(this + '', 'number', value)
     }
 
     return num

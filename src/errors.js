@@ -20,7 +20,7 @@ var QUERY_LINKS = {
  * @class DruidError
  * @extends Error
  */
-exports.DruidError = createCustomError('DruidError')
+export const DruidError = createCustomError('DruidError')
 
 
 
@@ -31,7 +31,9 @@ exports.DruidError = createCustomError('DruidError')
  * @class MissingFieldError
  * @extends Error
  */
-exports.MissingFieldError = createCustomError('MissingFieldError', null, function(field, queryType) {
+export function MissingFieldError(field, queryType) {
+  Error.call(this)
+  this.name = 'MissingFieldError'
   /**
    * Human-readable error message
    *
@@ -62,7 +64,7 @@ exports.MissingFieldError = createCustomError('MissingFieldError', null, functio
    * @type {string}
    */
   this.queryType = queryType
-})
+}
 
 
 
@@ -73,7 +75,7 @@ exports.MissingFieldError = createCustomError('MissingFieldError', null, functio
  * @class FieldError
  * @extends Error
  */
-exports.FieldError = createCustomError('FieldError')
+export const FieldError = createCustomError('FieldError')
 
 
 
@@ -84,7 +86,9 @@ exports.FieldError = createCustomError('FieldError')
  * @class FieldTypeError
  * @extends Error
  */
-exports.FieldTypeError = createCustomError('FieldTypeError', null, function(field, type, value) {
+export function FieldTypeError(field, type, value) {
+  Error.call(this)
+  this.name = 'FieldTypeError'
   if (field) {
     /**
      * Good error message
@@ -96,4 +100,4 @@ exports.FieldTypeError = createCustomError('FieldTypeError', null, function(fiel
   else {
     this.message = 'Invalid ' + type + ': ' + value
   }
-})
+}
