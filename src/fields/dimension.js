@@ -4,7 +4,7 @@ var FieldError = require('../errors').FieldError
 
 module.exports = dimension
 
-
+module.exports.push = 'dimensions'
 
 
 /**
