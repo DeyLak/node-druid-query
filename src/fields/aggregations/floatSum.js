@@ -10,7 +10,7 @@ var FieldError = require('../../errors').FieldError
  *
  * @param {string} fieldName name of the metric column to sum over
  */
-module.exports = function gloatSum(fieldName) {
+module.exports = function floatSum(fieldName) {
   if (!fieldName) {
     throw new FieldError('Missing metric column')
   }
