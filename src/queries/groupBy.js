@@ -31,4 +31,4 @@ util.inherits(GroupByQuery, Query)
 
 Query.type(GroupByQuery, 'groupBy')
 Query.required(GroupByQuery, 'dimensions', 'granularity', 'aggregations', 'intervals')
-Query.addFields(GroupByQuery, ['granularity', 'dimensions', 'limitSpec', 'filter', 'aggregations', 'postAggregations', 'interval', 'intervals', 'having'])
+Query.addFields(GroupByQuery, ['granularity', 'dimensions', 'dimension', 'limitSpec', 'filter', 'aggregations', 'postAggregations', 'interval', 'intervals', 'having'])
