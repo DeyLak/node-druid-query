@@ -9,7 +9,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'main.js',
-    libraryTarget: 'umd',
+    libraryTarget: 'commonjs2',
     library: 'druid-query',
   },
   module: {
